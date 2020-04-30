@@ -16,7 +16,7 @@
         width: 40%;
     }
     .center-bet-section {
-        height: 130px;
+        height: auto;
         width: 20% !important;
     }
     .coin-section {
@@ -40,5 +40,8 @@
     }
     .range-container h4 {
         font-size: 15px;
+    }
+    .center-bet-section .number-box {
+        margin: 0px;
     }
 }
