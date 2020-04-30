@@ -122,6 +122,12 @@ body {
     line-height: 29px;
 }
 
+.numbers-container :first-child {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .number-box {
     width: 51px;
     height: 42px;
