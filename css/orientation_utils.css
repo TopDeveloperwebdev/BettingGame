@@ -1,11 +1,8 @@
 @media (max-width: 767px) {
     .main {
         padding: 0px;
-        padding-top: 120px;
+        padding-top: 50px;
     }
-}
-
-@media (max-width: 500px) {
     .orientation-msg-text {
         font-size: 30px;
     }
