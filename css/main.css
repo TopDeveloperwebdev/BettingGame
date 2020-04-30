@@ -1,0 +1,296 @@
+root {
+    display: block;
+}
+
+body {
+    background-color: #000;
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+
+/***************FONTS*******************/
+
+@font-face {
+    font-family: 'arialbold';
+    src: url('arialbd-webfont.eot');
+    src: url('arialbd-webfont.eot?#iefix') format('embedded-opentype'), url('arialbd-webfont.woff2') format('woff2'), url('arialbd-webfont.woff') format('woff'), url('arialbd-webfont.ttf') format('truetype'), url('arialbd-webfont.svg#arialbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'plantagenet_cherokeeregular';
+    src: url('plantagenet_cherokee_1-webfont.woff2') format('woff2'), url('plantagenet_cherokee_1-webfont.woff') format('woff'), url('plantagenet_cherokee_1-webfont.svg#plantagenet_cherokeeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.check-fonts {
+    position: fixed;
+    opacity: 0;
+}
+
+.check-font-1 {
+    font-family: 'arialbold';
+}
+
+.check-font-2 {
+    font-family: 'plantagenet_cherokeeregular';
+}
+
+.main {
+    display: flex;
+    background: url(../img/main-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    max-width: 950px;
+    margin: auto;
+    flex-direction: column;
+    padding: 50px;
+    position: relative;
+}
+
+.logo-container {
+    width: 80px;
+    position: absolute;
+    left: calc(50% - 38px);
+    top: 21px;
+}
+
+.logo {
+    background: url(../img/logo-bg.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 76px;
+    height: 75px;
+    position: relative;
+}
+
+.logo img {
+    width: 130%;
+    left: -10px;
+    position: absolute;
+}
+
+.betting-section {
+    height: 28%;
+    display: flex;
+    justify-content: space-between
+}
+
+.left-bet-section {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-bet-section {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.range-container {
+    height: 50px;
+    width: 100%;
+    background: #9CBA58;
+    border: 0.4979px solid #FFFFFF;
+    color: #0066CB;
+    display: flex;
+    justify-content: center;
+}
+
+.range-container h4 {
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.numbers-container {
+    height: 80px;
+    border: 0.4979px solid #FFFFFF;
+}
+
+.numbers-container>div {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 29px;
+}
+
+.number-box {
+    width: 51px;
+    height: 42px;
+    background: #9CBA58;
+    border: 1px solid #d8cdcd;
+    color: #0066CB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-box img {
+    width: 50%;
+    height: 64%;
+}
+
+.justify-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-bet-section {
+    width: 16.8%;
+    background: #0066CB;
+    border: 0.332px solid #14498B;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center-bet-section .number-box {
+    height: 43%;
+    width: 100%;
+    border: 0.4979px solid #FFFFFF;
+    background: none;
+}
+
+.zero-number-section img {
+    width: 35%;
+}
+
+.five-number-section img {
+    width: 100%;
+    margin-top: 21px;
+}
+
+.coin-section {
+    display: flex;
+    background: #0066CB;
+}
+
+.coin-section>div {
+    border: 0.4979px solid #FFFFFF;
+    padding: 10px;
+}
+
+.coin-container {
+    display: flex;
+    color: white;
+    width: 62%;
+    font-size: 12px;
+}
+
+.coins {
+    width: 100%;
+    display: flex;
+    height: 75%;
+}
+
+.coins>div {
+    width: 20%;
+    display: flex;
+}
+
+.coins img {
+    width: 120%;
+    margin-left: -8px;
+}
+
+.date-container {
+    width: 19%;
+}
+
+.date-container h5 {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.date-container input {
+    width: 48px;
+    height: 48px;
+}
+
+.button-container {
+    display: flex;
+    width: 19%;
+}
+
+.button {
+    width: 81px;
+    height: 35px;
+    background: #FFC000;
+    border-radius: 9px;
+    box-shadow: 1px 4px 5px 1px #080808;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-header {
+    background: #0066CB;
+    border: 0.4979px solid #FFFFFF;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    padding: 7px;
+}
+
+.table-header .button {
+    position: absolute;
+    right: 7px;
+    width: 88px;
+    height: 28px;
+    border-radius: 6px;
+    top: 7px;
+}
+
+.table-info,
+.table-info>td,
+.table-info>th {
+    background: #0066CB !important;
+    border: 1.8px solid #FFFFFF !important;
+    width: 12%;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.table td {
+    border: 1.8px solid #FFFFFF !important;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    border-collapse: unset;
+}
+
+tr:nth-child(even) {
+    background: #9CBA58;
+}
+
+tr:nth-child(odd) {
+    background: none
+}
+
+.double-border {
+    border-right-style: double !important;
+    border-color: white;
+}
