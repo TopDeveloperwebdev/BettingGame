@@ -28,4 +28,17 @@
     .table-content {
         overflow-x: auto;
     }
+    .number-box {
+        margin: 5px
+    }
+    .numbers-container {
+        padding: 10px;
+        height: auto;
+    }
+    .numbers-container>div {
+        flex-wrap: wrap;
+    }
+    .range-container h4 {
+        font-size: 15px;
+    }
 }
