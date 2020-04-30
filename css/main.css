@@ -114,6 +114,10 @@ body {
     margin: 0px;
 }
 
+.active-box {
+    background: #d0e897 !important;
+}
+
 .range-container h4 {
     font-size: 21px;
     font-weight: bold;
