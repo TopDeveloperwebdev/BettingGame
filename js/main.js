@@ -54,4 +54,20 @@ $(document).ready(function() {
         $(this).addClass('active-box');
     });
 
+    $(".zero-number-section").mouseover(function() {
+        $('.number-box').removeClass('active-box');
+        let numberBox = $('.number-box');
+        for (let i = 0; i < small.length; i++) {
+            numberBox.eq(small[i]).addClass('active-box');
+            numberBox.eq(even[i]).addClass('active-box');
+        }
+    });
+    $(".five-number-section").mouseover(function() {
+        $('.number-box').removeClass('active-box');
+        let numberBox = $('.number-box');
+        for (let i = 0; i < small.length; i++) {
+            numberBox.eq(big[i]).addClass('active-box');
+            numberBox.eq(odd[i]).addClass('active-box');
+        }
+    });
 })
