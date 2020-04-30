@@ -102,6 +102,7 @@ body {
     color: #0066CB;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .range-container h4 {
@@ -138,6 +139,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .number-box img {
@@ -211,6 +213,9 @@ body {
 .coins img {
     width: 120%;
     margin-left: -8px;
+    -webkit-filter: drop-shadow( 0px 6px 6px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow( 0px 6px 6px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
 }
 
 .date-container {
@@ -299,4 +304,9 @@ tr:nth-child(odd) {
 .double-border {
     border-right-style: double !important;
     border-color: white;
+}
+
+.active {
+    -webkit-filter: drop-shadow( 0px 6px 6px rgb(255, 255, 255));
+    filter: drop-shadow( 0px 5px 3px rgb(255, 255, 255)) !important;
 }

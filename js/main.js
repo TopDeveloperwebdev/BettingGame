@@ -1,4 +1,9 @@
 $(document).ready(function() {
 
-    $('#date').datepicker({ dateFormat: 'dd-mm' }).val();
+
+    $('.coins img').click(function() {
+        $('.coins img').removeClass('active');
+        $(this).addClass('active');
+
+    });
 })
