@@ -107,7 +107,7 @@ $(document).ready(function() {
         }
     });
     $(".buy-button").click(function() {
-        $('.buy-list tbody tr:last').after("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
-        $('#coin').remove();
+        $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+
     })
 })
