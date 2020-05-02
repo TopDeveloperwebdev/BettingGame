@@ -107,7 +107,41 @@ $(document).ready(function() {
         }
     });
     $(".buy-button").click(function() {
-        $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+        if (round && date && (number || Big || Small || Even || Odd)) {
+            $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+        } else {
+            alert('Please select numbers for buy');
+        }
+
+
 
     })
 })
+window.onload = function() {
+    this.datepickerinit();
+}
+
+function datepickerinit() {
+    var today = new Date();
+    var today = this.formatDate(today);
+    var endDay = new Date();
+    endDay.setDate(endDay.getDate() + 7);
+    endDay = this.formatDate(endDay);
+    console.log('dateSTring', today, endDay);
+    $('#date').attr('min', today);
+    $('#date').attr('max', endDay);
+}
+
+function formatDate(date) {
+    var dd = date.getDate();
+    var mm = date.getMonth() + 1;
+    var yyyy = date.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    date = yyyy + '-' + mm + '-' + dd;
+    return date;
+}
