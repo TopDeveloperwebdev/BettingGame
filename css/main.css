@@ -284,6 +284,7 @@ body {
     height: 28px;
     border-radius: 6px;
     top: 7px;
+    cursor: pointer;
 }
 
 .table-info,
