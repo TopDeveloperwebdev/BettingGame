@@ -32,8 +32,6 @@ $(document).ready(function() {
     $('.range-container , .number-box').click(function() {
         var selectedRange = $(this).attr('dataindex');
         var balance = coinsValue[selectedIndex];
-        round = $('#round').val();
-        number = ''
         Amount = ''
         Big = '';
         Small = '';
@@ -107,6 +105,7 @@ $(document).ready(function() {
         }
     });
     $(".buy-button").click(function() {
+        round = $('#round').val();
         if (round && date && (number || Big || Small || Even || Odd)) {
             $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
         } else {
@@ -119,6 +118,9 @@ $(document).ready(function() {
 })
 window.onload = function() {
     this.datepickerinit();
+
+    var md5 = 'star99:2020-04-20:0123456789';
+    console.log('md5------', calcMD5(md5));
 }
 
 function datepickerinit() {
