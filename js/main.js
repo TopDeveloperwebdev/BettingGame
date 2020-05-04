@@ -173,10 +173,14 @@ $(document).ready(function() {
 
         var round = $('#round').val();
         var selectedDate = $('#date').val();
-        console.log(round, selectedDate);
+        var rowspan = 0;
+        for (let i = 0; i < Balances.length; i++) {
+            if (Balances[i].length) {
+                rowspan += 1;
+            }
+        }
         if (round && selectedDate) {
             Total = 0;
-
             for (let i = 0; i < Balances.length; i++) {
                 if (Balances[i].length) {
                     console.log('----', Balances[i].length);
@@ -198,11 +202,19 @@ $(document).ready(function() {
                     else if (i == 12) Big = IBalance + '$';
                     else if (i == 13) Odd = IBalance + '$';
 
-                    Total += IBalance;
-                    $('.buy-list tbody').append("<tr><td>" + selectedDate + "</td><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+                    if (Total) {
+                        Total += IBalance;
+                        $('.buy-list tbody').append("<tr><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+                    } else {
+                        Total += IBalance;
+                        $('.buy-list tbody').append("<tr><td rowspan='" + rowspan + "'>" + selectedDate + "</td><td rowspan='" + rowspan + "'>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+                    }
+
 
                 }
             }
+            // $('.dateCol').attr('rowspan', rowspan);
+
 
         } else {
             alert('Please select numbers for buy');

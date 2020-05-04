@@ -308,6 +308,7 @@ body {
     font-size: 19px;
     font-weight: 400;
     border-collapse: unset;
+    vertical-align: center;
 }
 
 tr:nth-child(even) {
@@ -331,4 +332,9 @@ tr:nth-child(odd) {
 .table-section .button {
     width: 150px;
     height: 50px;
+}
+
+.table td,
+.table th {
+    vertical-align: middle!important;
 }
