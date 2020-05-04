@@ -14,10 +14,15 @@ let round = null,
     Even = null,
     Odd = null,
     Total = 0;
-let marginTop = 0,
-    zIndex = 0;
-
-
+let marginTop = []
+zIndex = [];
+var Balances = [];
+for (let i = 0; i < 14; i++) {
+    Balances.push([]);
+    marginTop.push(0);
+    zIndex.push(0)
+}
+let selectedBalance = [];
 $(document).ready(function() {
     $('.coins img').click(function() {
         $('.coins img').removeClass('active');
@@ -32,29 +37,48 @@ $(document).ready(function() {
     });
 
     $('.range-container , .number-box').click(function() {
+
         var selectedRange = $(this).attr('dataindex');
+
+        var RangeIndex = $(this).attr('rangeIndex');
         var balance = coinsValue[selectedIndex];
-        Amount = ''
-        Big = '';
-        Small = '';
-        Even = '';
-        Odd = '';
-        Total = balance + '$';
-        if (selectedRange == 'big') Big = balance + '$';
-        else if (selectedRange == 'small') Small = balance + '$';
-        else if (selectedRange == 'even') Even = balance + '$';
-        else if (selectedRange == 'odd') Odd = balance + '$';
-        else {
-            Amount = balance + '$';
-            number = selectedRange;
-        }
+        Balances[RangeIndex].push(coinsValue[selectedIndex]);
+        selectedBalance = Balances[RangeIndex];
+        console.log('selectedBalance', selectedBalance);
+        $.fn.calcSelectBalence();
+
+
+        // Amount = ''
+        // Big = '';
+        // Small = '';
+        // Even = '';
+        // Odd = '';
+        // Total = balance + '$';
+        // if (selectedRange == 'big') Big = balance + '$';
+        // else if (selectedRange == 'small') Small = balance + '$';
+        // else if (selectedRange == 'even') Even = balance + '$';
+        // else if (selectedRange == 'odd') Odd = balance + '$';
+        // else {
+        //     Amount = balance + '$';
+        //     number = selectedRange;
+        // }
         bettingCoin = selectedIndex;
-        marginTop -= 5;
-        zIndex += 5;
-        $(this).prepend("<img id='coin' style='margin-top :" + marginTop + "px ; z-index : " + zIndex + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
+        marginTop[RangeIndex] -= 5;
+        zIndex[RangeIndex] += 5;
+        $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
+
+
     });
 
+    $.fn.calcSelectBalence = function() {
 
+        var totalAmount = 0;
+        for (let i = 0; i < selectedBalance.length; i++) {
+            totalAmount += selectedBalance[i];
+        }
+
+
+    }
     $(".range-container").eq(0).mouseover(function() {
         $('.number-box').removeClass('active-box');
         let numberBox = $('.number-box');
