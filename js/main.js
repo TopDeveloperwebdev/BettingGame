@@ -6,8 +6,7 @@ let big = [6, 7, 8, 9];
 let even = [1, 3, 7, 9];
 let odd = [0, 2, 6, 8];
 
-let round = null,
-    number = null,
+let number = null,
     Amount = null,
     Big = null,
     Small = null,
@@ -161,17 +160,63 @@ $(document).ready(function() {
         }
     });
     $(".add-button").click(function() {
-        round = $('#round').val();
-        if (round && date && (number || Big || Small || Even || Odd)) {
-            $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+        // console.log('rebalance', Balances);
+
+        // if (selectedRange == 'big') Big = balance + '$';
+        // else if (selectedRange == 'small') Small = balance + '$';
+        // else if (selectedRange == 'even') Even = balance + '$';
+        // else if (selectedRange == 'odd') Odd = balance + '$';
+        // else {
+        //     Amount = balance + '$';
+        //     number = selectedRange;
+        // }
+
+        var round = $('#round').val();
+        var selectedDate = $('#date').val();
+        console.log(round, selectedDate);
+        if (round && selectedDate) {
+            Total = 0;
+
+            for (let i = 0; i < Balances.length; i++) {
+                if (Balances[i].length) {
+                    console.log('----', Balances[i].length);
+                    Amount = ''
+                    Big = '';
+                    Small = '';
+                    Even = '';
+                    Odd = '';
+                    number = '';
+                    var IBalance = 0;
+                    for (let j = 0; j < Balances[i].length; j++) {
+                        IBalance += Balances[i][j];
+                    }
+                    if (i < 10) {
+                        Amount = IBalance + '$';
+                        number = i;
+                    } else if (i == 10) Small = IBalance + '$';
+                    else if (i == 11) Even = IBalance + '$';
+                    else if (i == 12) Big = IBalance + '$';
+                    else if (i == 13) Odd = IBalance + '$';
+
+                    Total += IBalance;
+                    $('.buy-list tbody').append("<tr><td>" + selectedDate + "</td><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+
+                }
+            }
+
         } else {
             alert('Please select numbers for buy');
         }
+        // if (round && date) {
+        //     $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
+        // } else {
+        //     alert('Please select numbers for buy');
+        // }
     })
 })
 window.onload = function() {
     this.datepickerinit();
-    var md5 = 'star99:2020-04-20:0123456789';
+    var md5 = 'star99:0123456789';
     console.log('md5------', calcMD5(md5));
 }
 
