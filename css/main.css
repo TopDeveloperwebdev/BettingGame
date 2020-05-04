@@ -338,3 +338,7 @@ tr:nth-child(odd) {
 .table th {
     vertical-align: middle!important;
 }
+
+.btn-default {
+    margin: auto;
+}
