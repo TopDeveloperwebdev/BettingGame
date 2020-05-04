@@ -106,8 +106,8 @@ body {
     position: relative;
 }
 
-.range-container #coin,
-.number-box #coin {
+.range-container .coin,
+.number-box .coin {
     position: absolute;
     width: 60px;
     height: 60px;

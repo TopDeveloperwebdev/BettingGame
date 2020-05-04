@@ -40,35 +40,19 @@ $(document).ready(function() {
 
     $('.range-container , .number-box').click(function() {
 
-
-
         RangeIndex = $(this).attr('rangeIndex');
+        if ((RangeIndex == 10 && Balances[12].length) || (RangeIndex == 12 && Balances[10].length) || (RangeIndex == 11 && Balances[13].length) || (RangeIndex == 13 && Balances[11].length)) {
+            alert('It is possible to place on the box');
+            return;
+        }
+
         var balance = coinsValue[selectedIndex];
         Balances[RangeIndex].push(coinsValue[selectedIndex]);
         selectedBalance = Balances[RangeIndex];
         console.log('selectedBalance', selectedBalance);
         $.fn.calcSelectBalence();
-        const self = this;
-        console.log(' $(this)', $(self));
 
-        // Amount = ''
-        // Big = '';
-        // Small = '';
-        // Even = '';
-        // Odd = '';
-        // Total = balance + '$';
-        // if (selectedRange == 'big') Big = balance + '$';
-        // else if (selectedRange == 'small') Small = balance + '$';
-        // else if (selectedRange == 'even') Even = balance + '$';
-        // else if (selectedRange == 'odd') Odd = balance + '$';
-        // else {
-        //     Amount = balance + '$';
-        //     number = selectedRange;
-        // }
-        // bettingCoin = selectedIndex;
-        // marginTop[RangeIndex] -= 5;
-        // zIndex[RangeIndex] += 5;
-        // $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
+
         var selectedRange = $(this).attr('dataindex');
         bettingCoin = selectedIndex;
         $('.' + selectedRange + '').remove();
@@ -78,7 +62,7 @@ $(document).ready(function() {
         for (let i = 0; i < ReBalance.length; i++) {
             marginTop[RangeIndex] -= 5;
             zIndex[RangeIndex] += 5;
-            $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + ReBalance[i] + ".svg' />");
+            $(this).prepend("<img class='" + selectedRange + " coin' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + ReBalance[i] + ".svg' />");
         }
     });
 
@@ -160,16 +144,6 @@ $(document).ready(function() {
         }
     });
     $(".add-button").click(function() {
-        // console.log('rebalance', Balances);
-
-        // if (selectedRange == 'big') Big = balance + '$';
-        // else if (selectedRange == 'small') Small = balance + '$';
-        // else if (selectedRange == 'even') Even = balance + '$';
-        // else if (selectedRange == 'odd') Odd = balance + '$';
-        // else {
-        //     Amount = balance + '$';
-        //     number = selectedRange;
-        // }
 
         var round = $('#round').val();
         var selectedDate = $('#date').val();
@@ -209,21 +183,15 @@ $(document).ready(function() {
                         Total += IBalance;
                         $('.buy-list tbody').append("<tr><td rowspan='" + rowspan + "'>" + selectedDate + "</td><td rowspan='" + rowspan + "'>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
                     }
-
-
                 }
             }
-            // $('.dateCol').attr('rowspan', rowspan);
 
 
         } else {
-            alert('Please select numbers for buy');
+            alert('Please type require items');
         }
-        // if (round && date) {
-        //     $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
-        // } else {
-        //     alert('Please select numbers for buy');
-        // }
+        $('.coin').remove();
+
     })
 })
 window.onload = function() {
