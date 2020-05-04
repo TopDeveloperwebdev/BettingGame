@@ -23,6 +23,9 @@ for (let i = 0; i < 14; i++) {
     zIndex.push(0)
 }
 let selectedBalance = [];
+var totalAmount;
+let RangeIndex;
+let ReBalance = [];
 $(document).ready(function() {
     $('.coins img').click(function() {
         $('.coins img').removeClass('active');
@@ -38,15 +41,16 @@ $(document).ready(function() {
 
     $('.range-container , .number-box').click(function() {
 
-        var selectedRange = $(this).attr('dataindex');
 
-        var RangeIndex = $(this).attr('rangeIndex');
+
+        RangeIndex = $(this).attr('rangeIndex');
         var balance = coinsValue[selectedIndex];
         Balances[RangeIndex].push(coinsValue[selectedIndex]);
         selectedBalance = Balances[RangeIndex];
         console.log('selectedBalance', selectedBalance);
         $.fn.calcSelectBalence();
-
+        const self = this;
+        console.log(' $(this)', $(self));
 
         // Amount = ''
         // Big = '';
@@ -62,23 +66,52 @@ $(document).ready(function() {
         //     Amount = balance + '$';
         //     number = selectedRange;
         // }
+        // bettingCoin = selectedIndex;
+        // marginTop[RangeIndex] -= 5;
+        // zIndex[RangeIndex] += 5;
+        // $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
+        var selectedRange = $(this).attr('dataindex');
         bettingCoin = selectedIndex;
-        marginTop[RangeIndex] -= 5;
-        zIndex[RangeIndex] += 5;
-        $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
+        $('.' + selectedRange + '').remove();
+        ReBalance.sort(function(a, b) { return a - b });
+        for (let i = 0; i < ReBalance.length; i++) {
+            marginTop[RangeIndex] -= 5;
+            zIndex[RangeIndex] += 5;
+            $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + ReBalance[i] + ".svg' />");
+        }
 
+        // marginTop[RangeIndex] -= 5;
+        // zIndex[RangeIndex] += 5;
+        // $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
 
     });
 
     $.fn.calcSelectBalence = function() {
-
-        var totalAmount = 0;
+        totalAmount = 0;
         for (let i = 0; i < selectedBalance.length; i++) {
             totalAmount += selectedBalance[i];
         }
+        console.log('selectedBalance', selectedBalance);
+        $.fn.AssignCoins();
 
 
     }
+    $.fn.AssignCoins = function() {
+        let coinsSortedByValue = coinsValue.slice();
+        coinsSortedByValue.sort(function(a, b) { return b - a });
+        var temp = [];
+        for (let i = 0; i < coinsSortedByValue.length; i++) {
+            let coinCount = Math.floor(totalAmount / coinsSortedByValue[i]);
+            console.log('coinCount-------', coinCount);
+            for (let j = 0; j < coinCount; j++) {
+                temp.push(coinsSortedByValue[i]);
+            }
+            totalAmount -= (coinCount * coinsSortedByValue[i]);
+        }
+        ReBalance = temp.slice();
+
+    }
+
     $(".range-container").eq(0).mouseover(function() {
         $('.number-box').removeClass('active-box');
         let numberBox = $('.number-box');
