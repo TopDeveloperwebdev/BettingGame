@@ -74,16 +74,13 @@ $(document).ready(function() {
         bettingCoin = selectedIndex;
         $('.' + selectedRange + '').remove();
         ReBalance.sort(function(a, b) { return a - b });
+        marginTop[RangeIndex] = 0;
+        zIndex[RangeIndex] = 0;
         for (let i = 0; i < ReBalance.length; i++) {
             marginTop[RangeIndex] -= 5;
             zIndex[RangeIndex] += 5;
             $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + ReBalance[i] + ".svg' />");
         }
-
-        // marginTop[RangeIndex] -= 5;
-        // zIndex[RangeIndex] += 5;
-        // $(this).prepend("<img id='coin' class='" + selectedRange + "' style='margin-top :" + marginTop[RangeIndex] + "px ; z-index : " + zIndex[RangeIndex] + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
-
     });
 
     $.fn.calcSelectBalence = function() {
