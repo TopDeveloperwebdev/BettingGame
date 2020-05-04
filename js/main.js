@@ -14,6 +14,8 @@ let round = null,
     Even = null,
     Odd = null,
     Total = 0;
+let marginTop = 0,
+    zIndex = 0;
 
 
 $(document).ready(function() {
@@ -46,10 +48,10 @@ $(document).ready(function() {
             Amount = balance + '$';
             number = selectedRange;
         }
-
-        $('#coin').remove();
         bettingCoin = selectedIndex;
-        $(this).prepend("<img id='coin' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
+        marginTop -= 5;
+        zIndex += 5;
+        $(this).prepend("<img id='coin' style='margin-top :" + marginTop + "px ; z-index : " + zIndex + "' src='img/coin-" + coinsValue[selectedIndex] + ".svg' />");
     });
 
 
@@ -104,21 +106,17 @@ $(document).ready(function() {
             numberBox.eq(odd[i]).addClass('active-box');
         }
     });
-    $(".buy-button").click(function() {
+    $(".add-button").click(function() {
         round = $('#round').val();
         if (round && date && (number || Big || Small || Even || Odd)) {
             $('.buy-list tbody').append("<tr><td>" + round + "</td><td>" + number + "</td><td>" + Amount + "</td> <td>" + Big + "</td><td>" + Small + "</td><td>" + Even + "</td><td>" + Odd + "</td><td>" + Total + "</td></tr>");
         } else {
             alert('Please select numbers for buy');
         }
-
-
-
     })
 })
 window.onload = function() {
     this.datepickerinit();
-
     var md5 = 'star99:2020-04-20:0123456789';
     console.log('md5------', calcMD5(md5));
 }
