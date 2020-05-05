@@ -12,16 +12,16 @@ body {
 /***************FONTS*******************/
 
 @font-face {
-    font-family: 'arialbold';
-    src: url('arialbd-webfont.eot');
-    src: url('arialbd-webfont.eot?#iefix') format('embedded-opentype'), url('arialbd-webfont.woff2') format('woff2'), url('arialbd-webfont.woff') format('woff'), url('arialbd-webfont.ttf') format('truetype'), url('arialbd-webfont.svg#arialbold') format('svg');
+    font-family: "arialbold";
+    src: url("arialbd-webfont.eot");
+    src: url("arialbd-webfont.eot?#iefix") format("embedded-opentype"), url("arialbd-webfont.woff2") format("woff2"), url("arialbd-webfont.woff") format("woff"), url("arialbd-webfont.ttf") format("truetype"), url("arialbd-webfont.svg#arialbold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'plantagenet_cherokeeregular';
-    src: url('plantagenet_cherokee_1-webfont.woff2') format('woff2'), url('plantagenet_cherokee_1-webfont.woff') format('woff'), url('plantagenet_cherokee_1-webfont.svg#plantagenet_cherokeeregular') format('svg');
+    font-family: "plantagenet_cherokeeregular";
+    src: url("plantagenet_cherokee_1-webfont.woff2") format("woff2"), url("plantagenet_cherokee_1-webfont.woff") format("woff"), url("plantagenet_cherokee_1-webfont.svg#plantagenet_cherokeeregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -32,11 +32,11 @@ body {
 }
 
 .check-font-1 {
-    font-family: 'arialbold';
+    font-family: "arialbold";
 }
 
 .check-font-2 {
-    font-family: 'plantagenet_cherokeeregular';
+    font-family: "plantagenet_cherokeeregular";
 }
 
 .main {
@@ -77,7 +77,7 @@ body {
 .betting-section {
     height: 28%;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .left-bet-section {
@@ -97,9 +97,9 @@ body {
 .range-container {
     height: 50px;
     width: 100%;
-    background: #9CBA58;
-    border: 0.4979px solid #FFFFFF;
-    color: #0066CB;
+    background: #9cba58;
+    border: 0.4979px solid #ffffff;
+    color: #0066cb;
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -126,7 +126,7 @@ body {
 
 .numbers-container {
     height: 80px;
-    border: 0.4979px solid #FFFFFF;
+    border: 0.4979px solid #ffffff;
 }
 
 .numbers-container>div {
@@ -145,9 +145,9 @@ body {
 .number-box {
     width: 51px;
     height: 42px;
-    background: #9CBA58;
+    background: #9cba58;
     border: 1px solid #d8cdcd;
-    color: #0066CB;
+    color: #0066cb;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,8 +174,8 @@ body {
 
 .center-bet-section {
     width: 16.8%;
-    background: #0066CB;
-    border: 0.332px solid #14498B;
+    background: #0066cb;
+    border: 0.332px solid #14498b;
     display: flex;
     justify-content: space-between;
 }
@@ -183,7 +183,7 @@ body {
 .center-bet-section .number-box {
     height: 43%;
     width: 100%;
-    border: 0.4979px solid #FFFFFF;
+    border: 0.4979px solid #ffffff;
     background: none;
 }
 
@@ -198,11 +198,11 @@ body {
 
 .coin-section {
     display: flex;
-    background: #0066CB;
+    background: #0066cb;
 }
 
 .coin-section>div {
-    border: 0.4979px solid #FFFFFF;
+    border: 0.4979px solid #ffffff;
     padding: 10px;
 }
 
@@ -227,8 +227,8 @@ body {
 .coins img {
     width: 120%;
     margin-left: -8px;
-    -webkit-filter: drop-shadow( 0px 6px 6px rgba(0, 0, 0, 0.5));
-    filter: drop-shadow( 0px 6px 6px rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
 
@@ -243,7 +243,7 @@ body {
 }
 
 .date-container input {
-    width: 48px;
+    width: 68px;
     height: 48px;
 }
 
@@ -255,7 +255,7 @@ body {
 .button {
     width: 81px;
     height: 35px;
-    background: #FFC000;
+    background: #ffc000;
     border-radius: 9px;
     box-shadow: 1px 4px 5px 1px #080808;
     color: white;
@@ -268,8 +268,8 @@ body {
 }
 
 .table-header {
-    background: #0066CB;
-    border: 0.4979px solid #FFFFFF;
+    background: #0066cb;
+    border: 0.4979px solid #ffffff;
     text-align: center;
     color: white;
     font-weight: 400;
@@ -292,8 +292,8 @@ body {
 .table-info,
 .table-info>td,
 .table-info>th {
-    background: #0066CB !important;
-    border: 1.8px solid #FFFFFF !important;
+    background: #0066cb !important;
+    border: 1.8px solid #ffffff !important;
     width: 12%;
     color: white;
     text-align: center;
@@ -302,7 +302,7 @@ body {
 }
 
 .table td {
-    border: 1.8px solid #FFFFFF !important;
+    border: 1.8px solid #ffffff !important;
     color: white;
     text-align: center;
     font-size: 19px;
@@ -312,11 +312,11 @@ body {
 }
 
 tr:nth-child(even) {
-    background: #9CBA58;
+    background: #9cba58;
 }
 
 tr:nth-child(odd) {
-    background: none
+    background: none;
 }
 
 .double-border {
@@ -325,8 +325,8 @@ tr:nth-child(odd) {
 }
 
 .active {
-    -webkit-filter: drop-shadow( 0px 6px 6px rgb(255, 255, 255));
-    filter: drop-shadow( 0px 5px 3px rgb(255, 255, 255)) !important;
+    -webkit-filter: drop-shadow(0px 6px 6px rgb(255, 255, 255));
+    filter: drop-shadow(0px 5px 3px rgb(255, 255, 255)) !important;
 }
 
 .table-section .button {
@@ -336,9 +336,42 @@ tr:nth-child(odd) {
 
 .table td,
 .table th {
-    vertical-align: middle!important;
+    vertical-align: middle !important;
 }
 
 .btn-default {
     margin: auto;
+}
+
+input {
+    position: relative;
+    width: 150px;
+    height: 20px;
+}
+
+input:before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    content: attr(data-date);
+    display: inline-block;
+    color: black;
+}
+
+#round::before {
+    display: none;
+}
+
+input::-webkit-datetime-edit,
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+    display: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    color: black;
+    opacity: 1;
 }

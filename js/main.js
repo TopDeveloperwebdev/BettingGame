@@ -193,6 +193,14 @@ $(document).ready(function() {
         $('.coin').remove();
 
     })
+    $("#date").on("change", function() {
+        console.log('ssssss')
+        this.setAttribute(
+            "data-date",
+            moment(this.value, "YYYY-MM-DD")
+            .format(this.getAttribute("data-date-format"))
+        )
+    }).trigger("change")
 })
 window.onload = function() {
     this.datepickerinit();
