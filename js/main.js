@@ -39,7 +39,7 @@ $(document).ready(function() {
     });
 
     $('.range-container , .number-box').click(function() {
-
+        console.log('selectedBalance', selectedBalance, Balances[RangeIndex]);
         RangeIndex = $(this).attr('rangeIndex');
         if ((RangeIndex == 10 && Balances[12].length) || (RangeIndex == 12 && Balances[10].length) || (RangeIndex == 11 && Balances[13].length) || (RangeIndex == 13 && Balances[11].length)) {
             alert('You are not allow to bet on both sides.');
@@ -49,13 +49,14 @@ $(document).ready(function() {
         var balance = coinsValue[selectedIndex];
         Balances[RangeIndex].push(coinsValue[selectedIndex]);
         selectedBalance = Balances[RangeIndex];
-        console.log('selectedBalance', selectedBalance);
+
         $.fn.calcSelectBalence();
 
 
         var selectedRange = $(this).attr('dataindex');
         bettingCoin = selectedIndex;
         $('.' + selectedRange + '').remove();
+
         ReBalance.sort(function(a, b) { return a - b });
         marginTop[RangeIndex] = 0;
         zIndex[RangeIndex] = 0;
@@ -71,7 +72,6 @@ $(document).ready(function() {
         for (let i = 0; i < selectedBalance.length; i++) {
             totalAmount += selectedBalance[i];
         }
-        console.log('selectedBalance', selectedBalance);
         $.fn.AssignCoins();
 
 
@@ -88,7 +88,10 @@ $(document).ready(function() {
             }
             totalAmount -= (coinCount * coinsSortedByValue[i]);
         }
+        ReBalance = [];
+
         ReBalance = temp.slice();
+
 
     }
 
@@ -185,12 +188,17 @@ $(document).ready(function() {
                     }
                 }
             }
-
+            $('.coin').remove();
+            for (let i = 0; i < 14; i++) {
+                Balances[i] = [];
+                marginTop[i] = 0;
+                zIndex[i] = 0
+            }
 
         } else {
             alert('Please type require items');
         }
-        $('.coin').remove();
+
 
     })
     $("#date").on("change", function() {
