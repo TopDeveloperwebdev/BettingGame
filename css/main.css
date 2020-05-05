@@ -362,10 +362,10 @@ input:before {
     display: none;
 }
 
-input::-webkit-datetime-edit,
-input::-webkit-inner-spin-button,
-input::-webkit-clear-button {
-    display: none;
+.date input::-webkit-datetime-edit,
+.date input::-webkit-inner-spin-button,
+.date input::-webkit-clear-button {
+    display: none
 }
 
 input::-webkit-calendar-picker-indicator {
