@@ -201,6 +201,12 @@ $(document).ready(function() {
             .format(this.getAttribute("data-date-format"))
         )
     }).trigger("change")
+    $("#round").on("change", function() {
+        if (1 > $(this).val() || $(this).val() > 23) {
+            alert('Please type 1 ~ 23 numbers');
+            $(this).val(null)
+        }
+    })
 })
 window.onload = function() {
     this.datepickerinit();
