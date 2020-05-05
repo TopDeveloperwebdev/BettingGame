@@ -42,7 +42,7 @@ $(document).ready(function() {
 
         RangeIndex = $(this).attr('rangeIndex');
         if ((RangeIndex == 10 && Balances[12].length) || (RangeIndex == 12 && Balances[10].length) || (RangeIndex == 11 && Balances[13].length) || (RangeIndex == 13 && Balances[11].length)) {
-            alert('It is possible to place on the box');
+            alert('You are not allow to bet on both sides.');
             return;
         }
 
